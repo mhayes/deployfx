@@ -1,0 +1,50 @@
+<div class="hero-unit">
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns">
+        <h2><%= @featured_post.name %>
+        <p>Pellentesque habitant morbi tristique senectus et</p>
+        <%= link_to post_path, class:"nice medium blue button" do %>
+        Read More &raquo;
+        <% end %>
+      </div>
+    </div>    
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="nine columns">
+      <% @posts.each do |post| %>
+      <div class="row">
+        <div class="twelve columns">
+          <h4><%= post.name %></h4>
+          <em><%= post.created_at.strftime("%B %d, %Y") %></em>
+          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. <%= link_to "read more...", post_path %></p>
+          <hr />
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="three columns">
+      <h4>Search</h4>
+      <form class="nice">
+        <input type="text" class="input-text">
+      </form>
+      
+      <h4>Archives</h4>
+      <ul>
+        <li>2012 (17)</li>
+        <li>2011 (5)</li>
+      </ul>
+      
+      <h4>Tags</h4>
+      <p>
+        <a href="#">Ruby</a>,
+        <a href="#">Rails</a>,
+        <a href="#">Capistrano</a>,
+        <a href="#">ColdFusion</a>
+      </p>
+    </div>
+  </div>
+</div>
