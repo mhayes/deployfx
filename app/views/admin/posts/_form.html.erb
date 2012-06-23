@@ -39,11 +39,16 @@ window.onload = function(){
   editor.getSession().setUseSoftTabs(true);
   var HtmlMode = require("ace/mode/html").Mode;
   editor.getSession().setMode(new HtmlMode());
+  <% unless @post.new_record? %>
   editor.getSession().setValue("<%= escape_javascript(@post.body.html_safe) %>");
+  <% end %>
   $('form').on('submit', function(event){
     $('#post_body').val(editor.getValue());
   });
+  
+  <% if Rails.env.development? %>
   window.editor = editor;
+  <% end %>
 };
 </script>
 <% end %>
