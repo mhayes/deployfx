@@ -1,0 +1,36 @@
+<div class="hero-unit">
+  <div class="container">
+    <div class="row">
+      <div class="nine columns">
+        <h3><%= @post.name %></h3>
+        <p><%= @post.summary %></p>
+      </div>
+      <div class="three columns" style="text-align:right">
+        <div style="margin-top:11px;">
+          <h5><%= @post.year %></h5>
+          <h4><%= @post.created_at.strftime("%m/%d") %></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="nine columns">
+      <%= @post.body.html_safe %>
+    </div>
+    <div class="three columns">
+      <% if admin_signed_in? %>
+        <%= link_to "Edit Post", edit_admin_post_path(@post),
+          class:"nice small blue button" %>
+      <% end %>
+      
+      <h4>Tagged</h4>
+      <p><a href="#">Ruby</a>, <a href="#">Rails</a></p>
+      
+      <h4>Resources</h4>
+      <p>Here's some cool stuff to check out.</p>
+    </div>
+  </div>
+</div>

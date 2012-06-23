@@ -1,0 +1,29 @@
+<div class="container">
+  <%= form_for [:admin, @post], html:{class:"nice"} do |f| %>
+  <div class="row">
+    <div class="eight columns">
+      <%= f.label :name %>
+      <%= f.text_field :name, class:"input-text full" %>
+      
+      <%= f.label :summary %>
+      <%= f.text_field :summary, class:"input-text full" %>
+      
+      <%= f.label :body, "Content" %>
+      <%= f.text_area :body, class:"input-text full" %>
+      <button type="submit" class="nice small blue button">
+        <% if @post.new_record? %>
+        Create Post
+        <% else %>
+        Update Post
+        <% end %>
+      </button>
+      <% unless @post.new_record? %>
+      <%= link_to "View Post", post_path(@post), class:"nice small white button" %>
+      <% end %>
+    </div>
+    <div class="four columns">
+      <h4>Image Attachments</h4>
+    </div>
+  </div>
+  <% end %>
+</div>

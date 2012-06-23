@@ -2,8 +2,9 @@
 @import "foundation";
 @import "github";
 
-h1 {margin-top:25px; padding:0; font-size:28px;}
 
+h1 {margin-top:25px; padding:0; font-size:28px;}
+ul li, p {font-size:16px; color:#666;}
 .hero-unit {
   background:#f8f8f8;
   border-top:1px solid #e8e8e8;
@@ -12,7 +13,6 @@ h1 {margin-top:25px; padding:0; font-size:28px;}
   margin-bottom:10px;
   p {font-size:16px; color:#666; font-weight:400;}
 }
-
-p {font-size:16px; color:#666;}
+.input-text.full {width:100%;}
 
 .archive .panel {height:100px;}

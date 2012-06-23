@@ -3,7 +3,10 @@ class Post
   include Mongoid::Timestamps
   field :name
   field :summary
-  field :published_at, type: DateTime
+  field :body
+  field :publish_at, type: DateTime
+  
+  attr_accessible :name, :summary, :body, :publish_at
   
   def year
     created_at.strftime("%Y")
