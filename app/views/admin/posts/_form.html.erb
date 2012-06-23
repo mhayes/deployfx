@@ -8,8 +8,8 @@
       <%= f.label :summary %>
       <%= f.text_field :summary, class:"input-text full" %>
       
-      <%= f.label :body, "Content" %>
-      <%= f.text_area :body, class:"input-text full" %>
+      <div id="editor"></div>
+      <%= f.text_area :body, style:"display:none" %>
       <button type="submit" class="nice small blue button">
         <% if @post.new_record? %>
         Create Post
@@ -23,7 +23,27 @@
     </div>
     <div class="four columns">
       <h4>Image Attachments</h4>
+      
     </div>
   </div>
   <% end %>
 </div>
+
+<% content_for :javascripts do %>
+<%= javascript_include_tag "admin" %>
+<script type="text/javascript">
+window.onload = function(){
+  var editor = ace.edit("editor");
+  editor.setTheme("ace/theme/textmate");
+  editor.getSession().setTabSize(2);
+  editor.getSession().setUseSoftTabs(true);
+  var HtmlMode = require("ace/mode/html").Mode;
+  editor.getSession().setMode(new HtmlMode());
+  editor.getSession().setValue("<%= escape_javascript(@post.body.html_safe) %>");
+  $('form').on('submit', function(event){
+    $('#post_body').val(editor.getValue());
+  });
+  window.editor = editor;
+};
+</script>
+<% end %>
