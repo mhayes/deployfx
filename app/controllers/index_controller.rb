@@ -2,13 +2,13 @@
 class IndexController < ApplicationController
   def home
     @featured_post = Post.last
-    @posts = Post.limit(3)
+    @posts = Post.order_by(:created_at, :desc).limit(3)
   end
   
   def post
   end
   
-  def archive
+  def archives
     @posts = Post.all
   end
 end

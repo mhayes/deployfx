@@ -1,25 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="twelve columns">
+    <div class="nine columns">
       <h1><%= link_to "deployFX", root_path %></h1>
     </div>
     
-    <% if false %>
-    <div class="eight columns">
-      <div style="float:right">
-        <ul class="nav-bar">
-        	<li>
-        		<%= link_to "Home", root_path, class:"main" %>
-          </li>
-        	<li>
-        		<%= link_to "Blog", archive_paths, class:"main" %>
-        	</li>
-        	<li>
-        		<a href="#" class="main">Contact</a>
-        	</li>
-        </ul>
+    <div class="three columns">
+      <% if admin_signed_in? %>
+      <div style="margin-top:16px; text-align:right">
+        <%= link_to "Write a Post", new_admin_post_path,
+          class:"nice medium blue button" %>
+        <% end %>
       </div>
     </div>
-    <% end %>
   </div>
 </div>

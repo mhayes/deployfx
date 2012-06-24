@@ -5,7 +5,7 @@ class Admin::PostsController < Admin::BaseController
   
   def create
     @post = Post.create(params[:post])
-    redirect_to edit_admin_post_path
+    redirect_to edit_admin_post_path(@post)
   end
   
   def edit
@@ -15,6 +15,6 @@ class Admin::PostsController < Admin::BaseController
   def update
     @post = Post.find(params[:id])
     @post.update_attributes(params[:post])
-    redirect_to edit_admin_post_path
+    redirect_to edit_admin_post_path(@post)
   end
 end
