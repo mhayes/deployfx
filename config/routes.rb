@@ -10,6 +10,6 @@ Deployfx::Application.routes.draw do
   
   get "/admin" => "admin/posts#index"
   namespace :admin do
-    resources :posts, only: [:index, :new, :create, :edit, :update]
+    resources :posts
   end
 end

@@ -21,6 +21,7 @@
             <th>Name</th>
             <th>Author</th>
             <th>Publish At</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -29,6 +30,9 @@
             <td><%= link_to post.name, edit_admin_post_path(post) %></td>
             <td><%= post.user.try(:name) %></td>
             <td><%= post.publish_at.strftime("%B %d, %Y at %I:%M %Z") %></td>
+            <td><%= link_to "Remove", admin_post_path(post), 
+              method: :delete, class:"nice small red button",
+              confirm: "Are you sure?" %></td>
           </tr>
           <% end %>
         </tbody>

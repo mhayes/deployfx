@@ -8,7 +8,7 @@ class Post
   field :summary
   field :body
   field :notes
-  field :draft, type: Boolean
+  field :draft, type: Boolean, default: true
   field :publish_at, type: Time, default: -> {Time.now}
   belongs_to :user
   attr_accessible :name, :summary, :body, :notes, :tags, :publish_at, :draft

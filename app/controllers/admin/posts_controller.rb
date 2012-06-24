@@ -26,4 +26,10 @@ class Admin::PostsController < Admin::BaseController
     @post.update_attributes(params[:post])
     redirect_to edit_admin_post_path(@post)
   end
+  
+  def destroy
+    @post = Post.find_by_slug(params[:id])
+    @post.destroy
+    redirect_to action: :index
+  end
 end
