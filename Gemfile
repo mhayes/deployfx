@@ -23,4 +23,5 @@ end
 
 group :development do
   gem 'thin'
+  gem 'capistrano'
 end
