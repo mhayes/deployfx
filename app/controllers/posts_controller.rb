@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def show
-    @post = Post.published.find(params[:id])
+    @post = Post.published.find_by_slug(params[:id])
+    redirect_to root_path unless @post
   end
   
   def archives

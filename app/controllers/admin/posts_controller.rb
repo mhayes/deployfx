@@ -1,6 +1,6 @@
 class Admin::PostsController < Admin::BaseController
   def index
-    @posts = Post.all
+    @posts = Post.recent
   end
   
   def new
@@ -18,11 +18,11 @@ class Admin::PostsController < Admin::BaseController
   end
   
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.find_by_slug(params[:id])
   end
   
   def update
-    @post = Post.find(params[:id])
+    @post = Post.find_by_slug(params[:id])
     @post.update_attributes(params[:post])
     redirect_to edit_admin_post_path(@post)
   end

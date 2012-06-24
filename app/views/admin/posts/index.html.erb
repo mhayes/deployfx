@@ -19,14 +19,16 @@
         <thead>
           <tr>
             <th>Name</th>
-            <th>Created</th>
+            <th>Author</th>
+            <th>Publish At</th>
           </tr>
         </thead>
         <tbody>
           <% @posts.each do |post| %>
           <tr>
             <td><%= link_to post.name, edit_admin_post_path(post) %></td>
-            <td><%= post.created_at %></td>
+            <td><%= post.user.try(:name) %></td>
+            <td><%= post.publish_at.strftime("%B %d, %Y at %I:%M %Z") %></td>
           </tr>
           <% end %>
         </tbody>
