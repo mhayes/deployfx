@@ -12,6 +12,12 @@ set :deploy_to, "/var/www/deployfx"
 set :repository,  "git@github.com:mhayes/deployfx.git"
 set :branch, "master"
 
+server = "muggle.in"
+role :app, server
+role :web, server
+role :db, server, :primary => true
+set :rails_env, 'production'
+
 set :deploy_via, :remote_cache
 set :scm, "git"
 set :use_sudo, false
