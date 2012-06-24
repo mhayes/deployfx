@@ -6,6 +6,7 @@
 .navigation-bar {
   $height:50px;
   h1 {line-height:$height; font-size:28px; margin:0; padding:0;}
+  h1 a {color:#333;}
   .admin-actions { line-height:$height; text-align:right;}
 }
 
@@ -19,6 +20,13 @@ ul li, p {font-size:14px; color:#666;}
   margin-bottom:10px;
   h2 {color:#333; font-size:24px;}
   p {font-size:14px; color:#333; font-weight:400;}
+}
+
+/* Section::Home */
+.posts {
+  h4 {margin:0; padding:0;}
+  h4 a {color:#333;}
+  .published-at {color:#777;}
 }
 
 /* Section::Archives */

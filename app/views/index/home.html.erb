@@ -14,7 +14,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="posts container">
   <div class="row">
     <div class="nine columns">
       <% @posts.each do |post| %>
@@ -22,7 +22,7 @@
         <div class="twelve columns">
           <h4><%= link_to post.name, post %></h4>
           <span class="published-at"><%= post.created_at.strftime("%B %d, %Y") %></span>
-          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. <%= link_to "more...", post %></p>
+          <p><%= post.summary %> <%= link_to "more...", post %></p>
           <hr />
         </div>
       </div>
@@ -30,15 +30,10 @@
     </div>
     <div class="three columns">
       <h4><%= link_to "Archives", archives_path %></h4>
-      <ul>
-        <li>2012 (17)</li>
-        <li>2011 (5)</li>
-      </ul>
-      
       <h4>Tags</h4>
       <p>
         <% @tags.each do |tag| %>
-        <a href="#"><%= tag[0] %> (<%= tag[1].to_i %>)</a>
+        <%= link_to tag, tagged_posts_path(tag) %>
         <% end %>
       </p>
     </div>

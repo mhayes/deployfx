@@ -8,8 +8,13 @@ class Admin::PostsController < Admin::BaseController
   end
   
   def create
-    @post = Post.create(params[:post])
-    redirect_to edit_admin_post_path(@post)
+    @post = Post.new(params[:post])
+    @post.user = current_user
+    if @post.save
+      redirect_to edit_admin_post_path(@post)
+    else
+      render action: :new
+    end
   end
   
   def edit

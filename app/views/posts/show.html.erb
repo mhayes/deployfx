@@ -8,7 +8,7 @@
       <div class="three columns" style="text-align:right">
         <div style="margin-top:11px;">
           <h5><%= @post.year %></h5>
-          <h4><%= @post.created_at.strftime("%m/%d") %></h4>
+          <h4><%= @post.publish_at.strftime("%m/%d") %></h4>
         </div>
       </div>
     </div>
@@ -28,10 +28,11 @@
       <% end %>
       
       <h4>Tagged</h4>
-      <p><a href="#">Ruby</a>, <a href="#">Rails</a></p>
-      
-      <h4>Resources</h4>
-      <p>Here's some cool stuff to check out.</p>
+      <p>
+      <% @post.tags_array.each do |tag| %>
+        <%= link_to tag, tagged_posts_path(tag) %>
+      <% end %>
+      </p>
     </div>
   </div>
 </div>

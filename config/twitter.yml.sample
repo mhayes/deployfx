@@ -1,0 +1,12 @@
+defaults: &defaults
+  consumer_key: secret
+  consumer_secret: secret
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
