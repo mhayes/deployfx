@@ -1,0 +1,36 @@
+<div class="hero-unit">
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns">
+        <h3>Admin Area</h3>
+        <p>Write blog posts n' stuff</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="three columns">
+      <%= render "admin/sub_nav" %>
+    </div>
+    <div class="nine columns">
+      <table style="width:100%">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Created</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @posts.each do |post| %>
+          <tr>
+            <td><%= link_to post.name, edit_admin_post_path(post) %></td>
+            <td><%= post.created_at %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

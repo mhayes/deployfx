@@ -22,7 +22,10 @@
       <% end %>
     </div>
     <div class="four columns">
+      <h4>Notes</h4>
+      <%= f.text_area :notes, class:"input-text" %>
       <h4>Tags</h4>
+      <%= f.text_field :tags, class:"input-text" %>
       <h4>Image Attachments</h4>
       
     </div>
@@ -40,6 +43,7 @@ window.onload = function(){
   editor.getSession().setUseSoftTabs(true);
   var HtmlMode = require("ace/mode/html").Mode;
   editor.getSession().setMode(new HtmlMode());
+  editor.getSession().setUseWrapMode(true);
   <% unless @post.new_record? %>
   editor.getSession().setValue("<%= escape_javascript(@post.body.html_safe) %>");
   <% end %>

@@ -3,7 +3,9 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.5'
 gem 'jquery-rails'
 gem 'mongoid', '~> 2.4'
+gem 'mongoid_taggable'
 gem 'bson_ext', '~> 1.5'
+gem 'active_link_to'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

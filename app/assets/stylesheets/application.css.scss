@@ -3,20 +3,29 @@
 @import "github";
 
 
-h1 {margin-top:25px; padding:0; font-size:28px;}
-ul li, p {font-size:16px; color:#666;}
+.navigation-bar {
+  $height:50px;
+  h1 {line-height:$height; font-size:28px; margin:0; padding:0;}
+  .admin-actions { line-height:$height; text-align:right;}
+}
+
+/* Section::Globals */
+ul li, p {font-size:14px; color:#666;}
 .hero-unit {
   background:#f8f8f8;
   border-top:1px solid #e8e8e8;
   border-bottom:1px solid #e8e8e8;
   padding:15px 0;
   margin-bottom:10px;
-  p {font-size:16px; color:#666; font-weight:400;}
+  h2 {color:#333; font-size:24px;}
+  p {font-size:14px; color:#333; font-weight:400;}
 }
-.input-text.full {width:100%;}
+
+/* Section::Archives */
 .archive .panel {height:100px;}
 
-/* ADMIN */
+/* Section::Admin */
+.input-text.full {width:100%;}
 #editor {
   position:relative;
   width:100%;

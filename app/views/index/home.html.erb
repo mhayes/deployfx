@@ -2,10 +2,12 @@
   <div class="container">
     <div class="row">
       <div class="twelve columns">
+        <% if @featured_post %>
         <h2><%= @featured_post.name %>
         <p><%= @featured_post.summary %></p>
-        <%= link_to post_path(@featured_post), class:"nice medium blue button" do %>
+        <%= link_to post_path(@featured_post), class:"nice small blue button" do %>
         Read More &raquo;
+        <% end %>
         <% end %>
       </div>
     </div>    
@@ -18,22 +20,15 @@
       <% @posts.each do |post| %>
       <div class="row">
         <div class="twelve columns">
-          <h4><%= post.name %></h4>
-          <em><%= post.created_at.strftime("%B %d, %Y") %></em>
-          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. <%= link_to "read more...", root_path %></p>
+          <h4><%= link_to post.name, post %></h4>
+          <span class="published-at"><%= post.created_at.strftime("%B %d, %Y") %></span>
+          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. <%= link_to "more...", post %></p>
           <hr />
         </div>
       </div>
       <% end %>
     </div>
     <div class="three columns">
-      <% if false %>
-      <h4>Search</h4>
-      <form class="nice">
-        <input type="text" class="input-text">
-      </form>
-      <% end %>
-      
       <h4><%= link_to "Archives", archives_path %></h4>
       <ul>
         <li>2012 (17)</li>
@@ -42,10 +37,9 @@
       
       <h4>Tags</h4>
       <p>
-        <a href="#">Ruby</a>,
-        <a href="#">Rails</a>,
-        <a href="#">Capistrano</a>,
-        <a href="#">ColdFusion</a>
+        <% @tags.each do |tag| %>
+        <a href="#"><%= tag[0] %> (<%= tag[1].to_i %>)</a>
+        <% end %>
       </p>
     </div>
   </div>
