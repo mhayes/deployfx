@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+require "pathname"
+require "fileutils"
+
+APP_PATH = Pathname(File.expand_path(File.dirname(File.dirname("."))))
+config_path = APP_PATH.join('config')
+
+# ENSURE YML CONFIG FILES EXIST
+Dir.glob(config_path.join("*.yml.sample")).each do |config_file|
+  new_config_file = config_file.gsub(/\.yml\.sample$/, ".yml")
+  if File.exist?(new_config_file)
+    puts "[IGNORED] #{new_config_file}"
+  else
+    FileUtils.cp config_file, new_config_file
+    puts "[CREATED] #{new_config_file} was created."
+  end
+end

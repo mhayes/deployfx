@@ -1,6 +1,6 @@
 defaults: &defaults
-  consumer_key: secret
-  consumer_secret: secret
+  consumer_key: l665Xsg23eVodk8scxJA
+  consumer_secret: TZAras2b29UqZwyc0W6kverRCkiEOlkBZCKq87sA7BE
 
 development:
   <<: *defaults
