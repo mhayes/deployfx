@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
   def show
-    @post = Post.published.find_by_slug(params[:id])
+    if admin_signed_in?
+      @post = Post.find_by_slug(params[:id])
+    else
+      @post = Post.published.find_by_slug(params[:id])
+    end
     redirect_to root_path unless @post
   end
   

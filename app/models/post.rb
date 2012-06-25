@@ -20,4 +20,8 @@ class Post
   def year
     publish_at.strftime("%Y")
   end
+  
+  def published?
+    (publish_at.utc < Time.now) && !draft?
+  end
 end
