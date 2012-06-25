@@ -22,6 +22,7 @@
     </div>
     <div class="three columns">
       <% if admin_signed_in? %>
+        <% unless @post.published? %><strong>DRAFT</strong><% end %>
         <%= link_to "Edit Post", edit_admin_post_path(@post),
           class:"nice small blue button" %>
       <hr />
