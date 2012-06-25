@@ -1,4 +1,5 @@
-== Requirements
+Requirements
+============
 
   * Homebrew
   * Ruby-build / rbenv
@@ -9,20 +10,24 @@
   * MongoDB
     * `brew install mongodb`
   
-== Getting Started
+Getting Started
+===============
 
   1. Clone this repo `git clone git@github.com:mhayes/deployfx.git`
   1. Run `bundle install`
   1. Run `script/bootstrap` which will copy `config/*.yml.sample` to `config/*.yml` files.
   1. Run the server `bundle exec rails s`
 
-== Login / Become Admin
+Login / Become Admin
+====================
+
 
   1. Go to `http://localhost:3000/auth/twitter` to login
   1. To become an admin you'll need to manually set the `admin` flag to true.
     * `bundle exec rails c`
     * `irb> User.first.update_attribute(:admin, true)`
 
-== Deployment
+Deployment
+==========
 
 `bundle exec cap deploy`
