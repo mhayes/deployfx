@@ -23,7 +23,9 @@
     </div>
     <div class="four columns">
       <h4>Publish At</h4>
-      <%= f.datetime_select :publish_at %>
+      <span class="publish-at">
+      <%= f.datetime_select :publish_at, ampm: true, order:[:month, :day, :year] %>
+      </span>
       <h4>Draft</h4>
       <label><%= f.check_box :draft %> Draft</label>
       <h4>Notes</h4>
