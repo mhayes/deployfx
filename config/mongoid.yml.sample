@@ -1,8 +1,12 @@
 development:
+  use_utc: false
+  use_activesupport_time_zone: true
   host: localhost
   database: deployfx_development
 
 test:
+  use_utc: false
+  use_activesupport_time_zone: true
   host: localhost
   database: deployfx_test
 
