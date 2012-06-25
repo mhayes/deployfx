@@ -25,3 +25,7 @@ group :development do
   gem 'thin'
   gem 'capistrano'
 end
+
+group :production do
+  gem 'unicorn'
+end
