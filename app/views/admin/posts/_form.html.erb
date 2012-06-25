@@ -8,6 +8,7 @@
       <%= f.label :summary %>
       <%= f.text_field :summary, class:"input-text full" %>
       
+      <label>Body</label>
       <div id="editor"></div>
       <%= f.text_area :body, style:"display:none" %>
       <button type="submit" class="nice small blue button">
@@ -29,11 +30,9 @@
       <h4>Draft</h4>
       <label><%= f.check_box :draft %> Draft</label>
       <h4>Notes</h4>
-      <%= f.text_area :notes, class:"input-text" %>
+      <%= f.text_area :notes, class:"input-text", rows: 5 %>
       <h4>Tags</h4>
       <%= f.text_field :tags, class:"input-text" %>
-      <h4>Image Attachments</h4>
-      
     </div>
   </div>
   <% end %>
