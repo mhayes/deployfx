@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.5'
 gem 'jquery-rails'
-gem 'mongoid', '~> 2.4'
+gem 'mongoid', '2.4.11'
 gem 'mongoid_taggable'
 gem 'mongoid_slug'
 gem 'bson_ext', '~> 1.5'

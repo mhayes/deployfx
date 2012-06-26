@@ -168,7 +168,7 @@ DEPENDENCIES
   capistrano
   coffee-rails (~> 3.2.1)
   jquery-rails
-  mongoid (~> 2.4)
+  mongoid (= 2.4.11)
   mongoid_slug
   mongoid_taggable
   omniauth

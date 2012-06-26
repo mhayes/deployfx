@@ -4,5 +4,5 @@ class User
   field :name
   field :admin, type: Boolean
   has_many :posts
-  attr_accessible :name
+  attr_accessible :name, :twitter_uid
 end
