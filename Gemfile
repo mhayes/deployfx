@@ -7,7 +7,6 @@ gem 'mongoid_taggable'
 gem 'mongoid_slug'
 gem 'bson_ext', '~> 1.5'
 gem 'active_link_to'
-gem 'will_paginate'
 
 # Authentication
 gem 'omniauth'
