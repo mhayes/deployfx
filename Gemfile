@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.5'
+gem 'rails', '3.2.6'
 gem 'jquery-rails'
 gem 'mongoid', '2.4.11'
 gem 'mongoid_taggable'
